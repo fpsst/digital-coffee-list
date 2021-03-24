@@ -1,12 +1,9 @@
 import sqlite3
 from board import SCL, SDA
-import busio
+import busio, sys, logging, hashlib, base58check
 import adafruit_ssd1306
-import logging
-import hashlib, base58check
 from RPi import GPIO
 from time import sleep
-import sys
 from mfrc522 import SimpleMFRC522
 from ky040.KY040 import KY040
 
