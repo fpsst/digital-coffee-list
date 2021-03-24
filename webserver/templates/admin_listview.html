@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} Kaffeeliste {% endblock %}</h2>
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Kaffees</th>
+        <th>Bezahlt</th>
+        <th>Saldo</th>
+      </tr>
+{% for user in users %}
+<tr>
+    <td>{{user['name']}}</td>
+    <td>{{user['coffees']}}</td>
+    <td>{{user['paid']}}</td>
+    <td>{{user['coffees']-user['paid']}}</td>
+
+</tr>
+{% endfor %}
+</table>
+
+
+
+{% endblock %}
