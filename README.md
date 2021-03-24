@@ -8,6 +8,6 @@ This project is written for Python 3. The Pi Zero needs to be configured to use 
 I used [this library for KY-040](https://github.com/martinohanlon/KY040) and
 [this one for the RC522 reader](https://github.com/pimylifeup/MFRC522-python).
 
-All other libs can be found using pip.
+The adafruit OLED lib comes with adfruit-blinka, which - as all other libs - can be found using pip.
 
 
