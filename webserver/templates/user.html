@@ -2,5 +2,6 @@
 
 {% block content %}
     <h2>{% block title %} {{ user['name'] }} {% endblock %}</h2>
-    <p>{{ user['coffees'] }}</p>
+    <p>Kaffees: {{ user['coffees'] }}</p>
+    <p>Bezahlt: {{user['paid']}}</p>
 {% endblock %}

@@ -24,23 +24,22 @@ def index():
     if request.method == 'POST':
         name = request.form['Name']
         mhash = request.form['Hash']
-        print("Name and hash set...")
         if not mhash or not name:
             flash("Bitte Zeichenfolge und Namen eintragen")
         else:
             conn = get_db_connection()
-            print("Connection established")
             sql = '''UPDATE KAFFEELISTE\
             SET NAME = ?\
             WHERE HASH = ? ;'''
             conn.execute(sql,(name,mhash))
             conn.commit()
             conn.close()
-            return render_template('reg_form.html')
+            user = get_user(mhash)
+            return render_template('user.html',user=user)
             #return redirect(url_for('user',user_id=mhash))
     return render_template('reg_form.html')
 
-@app.route('/<int:user_id>')
+@app.route('/user/<user_id>')
 def user(user_id):
     user = get_user(user_id)
     return render_template('user.html', user=user)
