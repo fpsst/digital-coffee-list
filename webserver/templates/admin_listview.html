@@ -1,22 +1,25 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
     <h2>{% block title %} Kaffeeliste {% endblock %}</h2>
 
 
-<table>
+<table style="width:80%">
     <tr>
-        <th>Name</th>
+        <th>Hash</th>
+	<th>Name</th>
         <th>Kaffees</th>
         <th>Bezahlt</th>
         <th>Saldo</th>
       </tr>
 {% for user in users %}
 <tr>
+    <td>{{user['hash']}}</td>
     <td>{{user['name']}}</td>
     <td>{{user['coffees']}}</td>
     <td>{{user['paid']}}</td>
-    <td>{{user['coffees']-user['paid']}}</td>
+    <td>{{user['coffees']}}</td>
 
 </tr>
 {% endfor %}

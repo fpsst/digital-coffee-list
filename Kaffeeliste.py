@@ -83,8 +83,8 @@ def update_count(conn, new_count, db_id):
     print("Count updated: ",new_count)
 
 def create_new_key(conn,mhash):
-    sql =   "INSERT INTO Kaffeeliste (HASH, COFFEES) \
-            VALUES ( ? , 1 )"
+    sql =   "INSERT INTO Kaffeeliste (HASH, COFFEES,PAID) \
+            VALUES ( ? , 1, 0 )"
     cur = conn.cursor()
     cur.execute(sql, (mhash,))
     conn.commit()    
