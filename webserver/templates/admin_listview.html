@@ -5,7 +5,7 @@
     <h2>{% block title %} Kaffeeliste {% endblock %}</h2>
 
 
-<table style="width:80%">
+<table style="width:100%">
     <tr>
         <th>Hash</th>
 	<th>Name</th>
@@ -19,8 +19,11 @@
     <td>{{user['name']}}</td>
     <td>{{user['coffees']}}</td>
     <td>{{user['paid']}}</td>
-    <td>{{user['coffees']}}</td>
-
+    <td>{% if user['paid'] %}
+        {{user['coffees']-user['paid']}} 
+        {% else %} 
+        {{ user['coffees'] }}
+        {% endif %}</td>
 </tr>
 {% endfor %}
 </table>
