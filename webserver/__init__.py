@@ -51,3 +51,6 @@ def admin_listview():
     conn.close()
     return render_template('admin_listview.html', users = users)
 
+if __name__ == "__main__":
+    app.run()
+
